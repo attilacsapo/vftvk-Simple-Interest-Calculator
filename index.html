@@ -4,13 +4,43 @@
     <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h1>Simple Interest Calculator</h1>
+        <div>
+        <h1>Simple Interest Calculator</h1> <br>
+        <form id="SIC_form">
+            <p>
+            Amount   <input type="number"  id="principal"> 
+            </p>
+            <p>
+                Interest Rate <input type="range"  id="rate" name="rate" min="0.0" max="20.0" step="0.1" value="10.0" oninput="showRate.value=parseFloat(this.value)+'%'">
+                <output name="showRate" id="showRate">10.0 %</output> </br>
+            </p>
+            <p>											
+            No. of Years  
+            <select id="years" name="years">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            </p>
+           <br>
+            <input type="button" value="Compute interest" onclick=compute()>
+        </form>
 
-        Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
+        <br>
+        <section id="result">
+            <p id="resultPrincipal"></p>
+            <p id="resultRate"></p>
+            <p id="resultEarn"></p>
+            <p id="resultYears"></p>
+        </section>
 
-        <button onclick="compute()">Compute</button>
+        <br>
+        <h2>(c) Everyone Can Get Rich</h2>
+        
+        </div>
+
+  
     </body>
 </html>
